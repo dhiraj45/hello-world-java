@@ -1,31 +1,13 @@
 pipeline
 {
-  agent any
-
   stages
   {
     stage('Build')
-{
-  steps
   {
-    echo 'Build App'
-  }
-}
-
-stage('Test')
-{
-  steps
+    steps
   {
-    echo 'Test App'
+    sh 'python --version'
   }
-}
-stage('Deploy')
-{
-  steps
-  {
-    echo 'Deploy APP'
-  }
-}
 }
 
 post
