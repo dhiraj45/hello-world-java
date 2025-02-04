@@ -32,7 +32,11 @@ post
 {
   always
   {
-    emailext body: 'summary', subject: 'Pipeline Status', to: 'c0930056@mylambton.ca'
+    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+      echo 'Post build actions will run if configured'
+      echo "Build result: ${buildResult}"
+      echo "Stage result: ${stageResult}"
+    }
   }
 }
 }
