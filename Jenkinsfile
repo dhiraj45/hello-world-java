@@ -1,13 +1,11 @@
-pipeline
-{
-  stages
-  {
-    stage('Build')
-  {
-    steps
-  {
-    sh 'python --version'
-  }
+pipeline {
+    stages {
+        stage('build') {
+            steps {
+                sh 'python --version'
+            }
+        }
+    }
 }
 
 post
